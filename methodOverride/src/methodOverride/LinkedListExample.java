@@ -85,7 +85,7 @@ public class LinkedListExample {
 		if(ll.contains("LAST"))
 		{
 			System.out.println("Im Last");
-			System.out.println("Im Git it is");
+			System.out.println("Im Git it is"    njnjk
 		}
 		else System.out.println("im not found");
 		
