@@ -1,0 +1,34 @@
+
+public class findVowelsConsotants {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String st="ABCDE";
+		findVowel(st);
+	}
+	public static void findVowel(String st)
+	{
+		int vowelCounter = 0, conCounter=0;
+		String stSmall = st.toLowerCase();
+		System.out.println(stSmall);
+		char a='a', e='e', i='i',o='o',u='u';
+		char[] ch=stSmall.toCharArray();
+		for(char c: ch)
+		{
+			if(c==a)
+				vowelCounter++;
+			else if (c==e)
+				vowelCounter++;
+			else if (c==i)
+				vowelCounter++;
+			else if (c==o)
+				vowelCounter++;
+			else if (c==u)
+				vowelCounter++;
+			else conCounter++;
+								
+		}
+			
+		System.out.println("No of Vowels "+vowelCounter+ " No of Consotants "+conCounter);
+	}
+}
