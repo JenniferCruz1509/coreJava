@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class MaxCharOccured {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str="AABCDDDDE";
+		List<Character> list = maxOccurChar(str);
+		for(Character c : list)
+		{
+			System.out.println(c);
+		}
+
+	}
+
+	public static List maxOccurChar(String str) {
+		// TODO Auto-generated method stub
+		char[] ch = str.toCharArray();
+		Integer maxOccured=0;
+		HashMap<Character,Integer> hm = new HashMap<Character,Integer>();
+		List list= new ArrayList<Character>();
+		
+		for (int i=0; i < ch.length; i++)
+		{
+			if(hm.containsKey(ch[i]))
+			{hm.put(ch[i], hm.get(ch[i])+1);
+			//System.out.println(hm);
+			}
+			else hm.put(ch[i], 1);
+			System.out.println(hm);
+			
+			if(hm.get(ch[i])>maxOccured)
+				maxOccured=hm.get(ch[i]);
+			
+		}
+		System.out.println(maxOccured);
+		Set<Map.Entry<Character, Integer>> entrySet = hm.entrySet();
+		Iterator itr = entrySet.iterator();
+		while(itr.hasNext())
+		{
+			Map.Entry<Character, Integer> entry = (Entry<Character, Integer>) itr.next();
+			if(entry.getValue()==maxOccured)
+				list.add(entry.getKey());
+		}
+		
+		return list;
+	}
+
+}
